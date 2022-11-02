@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
+  <title>PokéCollector</title>
+</head>
+
+<body>
+  <main>
+    <div class="col-6" style="align-items: center; text-align: center;">
+      <div class="row">
+        <div class="col-6">
+          <div class="searchBox">
+            <input id="pokemonName" type="text" placeholder="Pokémon Name">
+            <button id=search-button>🔍</button>
+          </div>
+          <div class="col-6">
+            <a id="collection" href="/index.html">Return</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="pokemonBox">
+        <div>
+          <img id="test"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"
+            alt="ditto">
+        </div>
+        <div class="pokemonInfo">
+          <h1>Ditto</h1>
+          <p>Description</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="col-12" style="text-align: start; margin-left: 70px;">
+      <h1>My PokéCollection!</h1>
+      <p>
+      </p>
+    </section>
+
+    <div class="dex-container" style="align-items: center; text-align: center;">
+    </div>
+    <div class="poke-container" id="poke-container"></div>
+
+  </main>
+  <script src="/src/assets/js/script.js"></script>
+</body>
+
+</html>
