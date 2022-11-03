@@ -1,11 +1,15 @@
 const poke_container = document.getElementById('poke-container');
 const addmorebtn = document.getElementById('addContent');
+
 addmorebtn.addEventListener("click", loadMore);
 
-const collection = [
 
-];
-
+async function getPokemon(id) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  createPokemonCard(data);
+}
 
 let start = 1
 let end = 20
@@ -19,12 +23,7 @@ function loadMore() {
   end += 20
 }
 
-async function getPokemon(id) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  createPokemonCard(data);
-}
+
 
 function createPokemonCard(pokemon) {
   const pokemonElement = document.createElement("div");
@@ -35,20 +34,29 @@ function createPokemonCard(pokemon) {
   </div>
   <div class="info">
           <span class="number">#${pokemon.id}</span>
-          <h3 class="name">${pokemon.name}</h3>
+          <h3 class="pokemon-name">${pokemon.name}</h3>
   </div>
   `;
-
-  const addButton = document.createElement('button')
-  addButton.addEventListener('click', function () {
-    collection.push(pokemon);
-    console.log(collection);
-  })
-  addButton.textContent = 'Add ➕';
-  pokemonElement.querySelector('.info').append(addButton);
   poke_container.appendChild(pokemonElement);
 
+  const addButton = document.createElement('button')
+  addButton.textContent = 'Add ➕';
+  addButton.addEventListener('click', function () {
+    localStorage.setItem("pokemon", JSON.stringify(pokemon));
+
+    document.getElementById("collection").innerHTML = localStorage.getItem(pokemon);
+
+
+  })
+
+  pokemonElement.querySelector('.info').append(addButton);
+
+
+
+
+
 }
+
 
 loadMore();
 
