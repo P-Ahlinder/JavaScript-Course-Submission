@@ -9,46 +9,26 @@
   <title>PokéCollector</title>
 </head>
 
-
-
 <body>
   <main>
-    <div class="container" style="align-items: center; text-align: center;">
-      <div class="searchBox">
-        <input id="pokemonName" type="text" placeholder="Pokémon Name">
-        <button id=search-button>🔍</button>
-      </div>
-
-
-
-      <div class="pokemonBox">
-        <div>
-          <img id="test"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"
-            alt="ditto">
-        </div>
-        <div class="pokemonInfo">
-          <h1>Ditto</h1>
-          <p>Description</p>
-        </div>
-      </div>
+    <div class="collect-container" style="text-align: right;">
+      <a href="collection.html" style="text-decoration:none; font-size: 50px;">🗂️<span>0</span></a>
     </div>
-
     <section class="col-12" style="text-align: start; margin-left: 70px;">
       <h1>Welcome to PokéCollector!</h1>
       <p>This site is made to help you organize your collectible Pokémon cards.<br>
-        Feel free to use the list below, or use the search function at the top of the site.
-      </p>
+        Feel free to use the list below, or use the search function at the top of the site.</p>
     </section>
 
     <div class="dex-container" style="align-items: center; text-align: center;">
       <h1 class="pokedexheader">Pokédex</h1>
     </div>
     <div class="poke-container" id="poke-container"></div>
-    <button id="addContent">Load more</button>
-    <button id="removeContent">Show less</button>
-
+    <div class="btn-container ">
+      <button id="addContent">Load more</button>
+    </div>
   </main>
+
   <script src="/src/assets/js/script.js"></script>
 
 </body>
