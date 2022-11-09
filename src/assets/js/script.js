@@ -28,7 +28,9 @@ function createPokemonCard(pokemon) {
                             </div>
                             <div class="info">
                             <span class="number">#${pokemon.id}</span>
-                            <h3 class="pokemon-name">${pokemon.name}</h3>
+                            <h4 class="pokemon-name">${pokemon.name}</h4>
+                            <h5 class="pokemon-name">Height: ${pokemon.height} ft</h5>
+                            <h5 class="pokemon-name">Weight: ${pokemon.weight} lb</h5>
                             </div>
                             `;
   poke_container.appendChild(pokemonElement);
@@ -37,7 +39,6 @@ function createPokemonCard(pokemon) {
   addButton.textContent = 'Add ➕';
   addButton.addEventListener('click', function () {
     localStorage.setItem(randomId(), JSON.stringify(pokemon));
-
   })
   pokemonElement.querySelector('.info').append(addButton);
 }

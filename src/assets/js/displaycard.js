@@ -16,7 +16,9 @@ function getFromLocalStorage() {
                             </div>
                             <div class="info">
                             <span class="number">#${pokemonObject.id}</span>
-                            <h3 class="pokemon-name">${pokemonObject.name}</h3>
+                            <h4 class="pokemon-name">${pokemonObject.name}</h4>
+                            <h5 class="pokemon-name">Height: ${pokemonObject.height} ft</h5>
+                            <h5 class="pokemon-name">Weight: ${pokemonObject.weight} lb</h5>
                             </div>
                             `;
     collection_container.appendChild(pokemonEl);
@@ -24,8 +26,8 @@ function getFromLocalStorage() {
     remButton.textContent = 'Remove 🗑️';
     remButton.addEventListener('click', function () {
       localStorage.removeItem(key)
+      alert("The card has been removed from your collection");
       location.reload();
-      console.log(remButton);
     })
     pokemonEl.querySelector('.info').append(remButton);
 
