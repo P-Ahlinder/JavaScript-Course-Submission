@@ -38,14 +38,10 @@ function createPokemonCard(pokemon) {
   const addButton = document.createElement('button')
   addButton.textContent = 'Add ➕';
   addButton.addEventListener('click', function () {
-    localStorage.setItem(randomId(), JSON.stringify(pokemon));
+    localStorage.setItem(pokemon.id, JSON.stringify(pokemon));
+    pokeCounter();
   })
   pokemonElement.querySelector('.info').append(addButton);
-}
-
-function randomId() {
-  const id = Math.random().toString(36).substr(2, 9);
-  return id;
 }
 
 function onLoadPokemonCount() {
@@ -67,7 +63,7 @@ function pokeCounter() {
     document.querySelector('.collect-container span').textContent = 1;
   }
 }
-
+onLoadPokemonCount();
 loadMore();
 
 

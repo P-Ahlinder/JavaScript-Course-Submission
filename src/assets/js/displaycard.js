@@ -1,6 +1,4 @@
-
 const collection_container = document.getElementById("collector")
-
 function getFromLocalStorage() {
   let pokemonID;
   let pokemonObject;
@@ -32,7 +30,14 @@ function getFromLocalStorage() {
     pokemonEl.querySelector('.info').append(remButton);
 
   })
+}
 
+function onLoadPokemonCount() {
+  let pokeNumbers = localStorage.getItem('pokemonCounter')
+  if (pokeNumbers) {
+    document.querySelector('.collect-container span').textContent = pokeNumbers;
+  }
 }
 getFromLocalStorage();
+onLoadPokemonCount();
 
