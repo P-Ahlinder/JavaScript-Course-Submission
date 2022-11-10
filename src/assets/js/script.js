@@ -4,19 +4,19 @@ addmorebtn.addEventListener("click", loadMore);
 let start = 1
 let end = 20
 
-async function getPokemon(id) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  createPokemonCard(data);
-}
-
 function loadMore() {
   for (let i = start; i <= end; i++) {
     getPokemon(i);
   }
   start += 20
   end += 20
+}
+
+async function getPokemon(id) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  createPokemonCard(data);
 }
 
 function createPokemonCard(pokemon) {
@@ -34,7 +34,6 @@ function createPokemonCard(pokemon) {
                             </div>
                             `;
   poke_container.appendChild(pokemonElement);
-
   const addButton = document.createElement('button')
   addButton.textContent = 'Add ➕';
   addButton.addEventListener('click', function () {
@@ -45,24 +44,25 @@ function createPokemonCard(pokemon) {
 }
 
 function onLoadPokemonCount() {
-  let pokeNumbers = localStorage.getItem('pokemonCounter')
+  let pokeNumbers = sessionStorage.getItem('pokemonCounter')
   if (pokeNumbers) {
     document.querySelector('.collect-container span').textContent = pokeNumbers;
   }
 }
 
 function pokeCounter() {
-  let pokeNumbers = localStorage.getItem('pokemonCounter')
+  let pokeNumbers = sessionStorage.getItem('pokemonCounter')
   pokeNumbers = parseInt(pokeNumbers);
 
   if (pokeNumbers) {
-    localStorage.setItem('pokemonCounter', pokeNumbers + 1);
+    sessionStorage.setItem('pokemonCounter', pokeNumbers + 1);
     document.querySelector('.collect-container span').textContent = pokeNumbers + 1;
   } else {
-    localStorage.setItem('pokemonCounter', 1);
+    sessionStorage.setItem('pokemonCounter', 1);
     document.querySelector('.collect-container span').textContent = 1;
   }
 }
+
 onLoadPokemonCount();
 loadMore();
 

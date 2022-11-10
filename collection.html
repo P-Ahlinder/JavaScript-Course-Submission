@@ -8,17 +8,17 @@
   <link rel="stylesheet" href="/src/assets/css/style.css">
   <title>PokéCollector</title>
 </head>
-<header class="header">
-  <div class="collect-container">
-    <a href="collection.html" style="text-decoration:none; font-size: 30px;">💼<span>0</span></a>
-  </div>
-</header>
 
 <body>
   <main>
-    <section>
+    <section class="infotext">
       <h1>PokéCollector!</h1>
-      <p>Here is your collection of Pokemoncard</p>
+      <p>Here is your collection of pokemons. Keep on going! You need them all!</p>
+      <div class="collect-container">
+        <a href="index.html" style="text-decoration:none; font-size: 40px;">⬅️</a>
+        <p>Retrun</p>
+        <a href="collection.html" style="text-decoration:none; font-size: 40px;">💼<span>0</span></a>
+      </div>
     </section>
 
     <div class="dex-container">
@@ -26,7 +26,6 @@
     </div>
     <div class="collector" id="collector"></div>
   </main>
-
   <script src="/src/assets/js/displaycard.js"></script>
 </body>
 
