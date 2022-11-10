@@ -11,21 +11,36 @@
 
 <body>
   <main>
-    <div class="collect-container" style="text-align: right;">
-      <a href="collection.html" style="text-decoration:none; font-size: 50px;">🗂️<span>0</span></a>
-    </div>
-    <section class="col-12" style="text-align: start; margin-left: 70px;">
+    <section class="infotext">
+      <h1>PokéCollector!</h1>
+      <p>Here is your collection of pokemons. Keep on going! You need them all!</p>
+      <div class="collect-container">
+        <div style="font-size: 30px; margin-bottom: 50px;"><a href="index.html"
+            style="text-decoration:none; font-size: 40px;">⬅️</a>Return to Pokedex.
+        </div>
+        <div style="font-size: 30px; margin-left:5px;">Nice! You have collected <a href="collection.html"
+            style="text-decoration:none; font-size: 40px;"><span style="color:gold;">0</span></a> pokemons so far,
+          keep up the good
+          job! </div>
+
+
+        </span>
+      </div>
     </section>
 
-    <div class="dex-container" style="align-items: center; text-align: center;">
+    <div class="dex-container">
       <h1 class="pokedexheader">My Pokédex</h1>
     </div>
     <div class="collector" id="collector"></div>
-
   </main>
-
   <script src="/src/assets/js/displaycard.js"></script>
-
+  <footer class="footer">
+    <div class="container">
+      <div class="sitemap">
+        <h3>©️ Per Ahlinder, Kursinlämning JavaScript Front-end</h3>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
