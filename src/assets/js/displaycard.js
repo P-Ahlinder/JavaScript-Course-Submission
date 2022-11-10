@@ -20,14 +20,14 @@ function getFromLocalStorage() {
                             </div>
                             `;
     collection_container.appendChild(pokemonEl);
-    console.log(pokemonEl);
+
     const remButton = document.createElement('button')
+    remButton.style.background = "red";
     remButton.textContent = 'Remove 🗑️';
     remButton.addEventListener('click', function () {
       localStorage.removeItem(key)
       alert("The card has been removed from your collection");
       location.reload();
-
 
       let pokeNumbers = sessionStorage.getItem('pokemonCounter')
       pokeNumbers = parseInt(pokeNumbers);
@@ -39,13 +39,9 @@ function getFromLocalStorage() {
         sessionStorage.setItem('pokemonCounter', 1);
         document.querySelector('.collect-container span').textContent = 1;
       }
-
-
-
     })
 
     pokemonEl.querySelector('.info').append(remButton);
-
   })
 }
 

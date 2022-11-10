@@ -33,14 +33,21 @@ function createPokemonCard(pokemon) {
                             <h5 class="pokemon-name">Weight: ${pokemon.weight} lb</h5>
                             </div>
                             `;
+
   poke_container.appendChild(pokemonElement);
   const addButton = document.createElement('button')
   addButton.textContent = 'Add ➕';
+  addButton.style.background = "green";
   addButton.addEventListener('click', function () {
-    localStorage.setItem(pokemon.id, JSON.stringify(pokemon));
+    localStorage.setItem(randomID(), JSON.stringify(pokemon));
     pokeCounter();
   })
   pokemonElement.querySelector('.info').append(addButton);
+}
+
+function randomID() {
+  const id = Math.random().toString(36).substr(2, 9);
+  return id;
 }
 
 function onLoadPokemonCount() {
@@ -62,6 +69,7 @@ function pokeCounter() {
     document.querySelector('.collect-container span').textContent = 1;
   }
 }
+
 
 onLoadPokemonCount();
 loadMore();

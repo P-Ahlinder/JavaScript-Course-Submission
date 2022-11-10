@@ -160,3 +160,13 @@ font-size: 0.8em;
 .infotext{
   color: #eee;
 }
+
+button{
+  background-color:darkgrey;
+  border: none;
+}
+button:hover{
+  transition: ease-in-out 0.5s;
+  color: #eee;
+}
+
